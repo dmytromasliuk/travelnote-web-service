@@ -26,7 +26,7 @@ public class User implements UserDetails {
     private Boolean nonLocked = true;
     private Boolean enabled = true;
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("users")
     private Profile profile;
 

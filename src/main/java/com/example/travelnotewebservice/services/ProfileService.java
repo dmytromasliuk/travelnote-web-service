@@ -18,8 +18,8 @@ public class ProfileService {
     private final ContactsRepository contactsRepository;
     private final CountryRepository countryRepository;
 
-    public ProfileDetailsResponse getProfileDetails(    Long userId){
-        Profile profile = profileRepository.findByUser(userRepository.getById(userId));
+    public ProfileDetailsResponse getProfileDetails(User user){
+        Profile profile = profileRepository.findByUser(user);
         return new ProfileDetailsResponse(
                 profile.getUser().getFirstName(),
                 profile.getUser().getLastName(),
@@ -30,9 +30,8 @@ public class ProfileService {
     }
 
     @Transactional
-    public String updateProfile(Long userId, ProfileUpdateRequest request){
-
-        Profile profile = profileRepository.findByUser(userRepository.getById(userId));
+    public String updateProfile(User user, ProfileUpdateRequest request){
+        Profile profile = profileRepository.findByUser(user);
         Contacts contacts = profile.getContacts();
         contacts.setPhone(request.getPhone());
         profile.setCountry(countryRepository.getById(request.getCountryId()));

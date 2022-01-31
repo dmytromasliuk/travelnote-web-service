@@ -22,11 +22,6 @@ public class UserService implements UserDetailsService {
     private final ContactsRepository contactsRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
-//    @Autowired
-//    public UserService(UserRepository userRepository) {
-//        this.userRepository = userRepository;
-//    }
-
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         return userRepository.findUserByEmail(s)

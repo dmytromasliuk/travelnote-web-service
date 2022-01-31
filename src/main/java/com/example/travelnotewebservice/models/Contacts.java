@@ -17,7 +17,7 @@ public class Contacts {
     private String email;
     private String phone;
 
-    @OneToOne(mappedBy = "contacts", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "contacts", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("contacts")
     private Profile profile;
 

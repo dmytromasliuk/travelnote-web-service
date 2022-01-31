@@ -6,8 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Data
@@ -20,11 +18,7 @@ public class Country {
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("countries")
-    private Set<City> cities = new HashSet<City>();
-
-    @OneToOne(mappedBy = "country", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "country", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("contacts")
     private Profile profile;
 
