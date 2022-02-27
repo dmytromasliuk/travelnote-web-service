@@ -5,7 +5,6 @@ import com.example.travelnotewebservice.controllers.responses.ProfileDetailsResp
 import com.example.travelnotewebservice.models.*;
 import com.example.travelnotewebservice.repositories.*;
 import lombok.AllArgsConstructor;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,8 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 public class ProfileService {
 
     private final ProfileRepository profileRepository;
-    private final UserRepository userRepository;
-    private final ContactsRepository contactsRepository;
     private final CountryRepository countryRepository;
 
     public ProfileDetailsResponse getProfileDetails(User user){

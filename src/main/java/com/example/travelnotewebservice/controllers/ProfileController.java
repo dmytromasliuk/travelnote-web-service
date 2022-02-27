@@ -4,7 +4,6 @@ import com.example.travelnotewebservice.controllers.requests.ProfileUpdateReques
 import com.example.travelnotewebservice.controllers.responses.ProfileDetailsResponse;
 import com.example.travelnotewebservice.models.User;
 import com.example.travelnotewebservice.services.ProfileService;
-import jdk.jfr.ContentType;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;

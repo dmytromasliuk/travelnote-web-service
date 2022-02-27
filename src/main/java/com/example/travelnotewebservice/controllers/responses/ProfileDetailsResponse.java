@@ -1,6 +1,5 @@
 package com.example.travelnotewebservice.controllers.responses;
 
-import jdk.jfr.ContentType;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
